@@ -1,0 +1,63 @@
+<ion-header>
+<ion-toolbar>
+<ion-title><b>NOVEDADES</b></ion-title>
+</ion-toolbar>
+</ion-header>
+<ion-content>
+<ion-img class="ion-padding" src="assets/imagen.JPG"></ion-img> ****falta reserva***
+<ion-text color="light" class="ion-text-center ion-margin-top">
+<ion-img class="ion-padding" src="assets/imagen.JPG"></ion-img> ****falta visualizar reservas***
+<ion-text color="light" class="ion-text-center ion-margin-top">
+<ion-slides>
+  <ion-slide><img src="assets/alicante1.jpg" /></ion-slide>****falta imagenes de novedades o promociones bar***
+  <ion-slide><img src="assets/alicante2.jpg" /></ion-slide>****falta imagenes de novedades o promociones bar***
+  /alicante3.jpg" /></ion-slide>****falta***
+</ion-slides>
+</ion-content>
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+ion-header {
+text-align: center;
+--color:#ffffff;
+}
+
+ion-title {
+text-align: center;
+--color:#ffffff;
+}
+
+ion-img {
+width: 30%;
+height: 30px;
+}
+
+ion-content {
+--ion-background-color: #2c689f !important;
+--color:#ffffff;
+}
+
+.ion-text-center{
+--ion-background-color: #2c689f !important;
+text-align: center;
+}
+
+ion-slide {
+align-content:center;
+text-align: center;
+margin-left: 10px;
+margin-left: 10px;
+margin-left: 10px;
+--color:#ffffff;
+}
+
+ion-label{
+text-align: left;
+--color:#ffffff;
+}
+
+ion-select{
+text-align: right;
+--color:#ffffff;
+}
+
