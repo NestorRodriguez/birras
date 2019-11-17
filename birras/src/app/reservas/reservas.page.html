@@ -4,13 +4,15 @@
   </ion-toolbar>
   </ion-header>
   <ion-content>
-    <ion-input required placeholder="Bar"></ion-input>      
+      <ion-label routerLink="/bares">Bar</ion-label>     
     <ion-input required placeholder="N° Personas"></ion-input>
     <ion-item>
         <ion-label>Motivo</ion-label>
-        <ion-select interface="popover">
-          <ion-select-option value="nes">Despedida de soltera(o)</ion-select-option>
-          <ion-select-option value="n64">Dia del hombre y la mujer</ion-select-option>
+        <ion-select required interface="popover">
+          <ion-select-option value="nes">Despedida de soltera</ion-select-option>
+          <ion-select-option value="nes">Despedida de soltero</ion-select-option>
+          <ion-select-option value="n64">Dia del hombre</ion-select-option>
+          <ion-select-option value="nes">Dia de la mujer</ion-select-option>
           <ion-select-option value="n64">Año nuevo</ion-select-option>
           <ion-select-option value="n64">Cumpleaños</ion-select-option>
           <ion-select-option value="n64">Amor y amistad</ion-select-option>
@@ -18,10 +20,11 @@
         </ion-select>
       </ion-item>
     <ion-input required placeholder="Dedicatoria"></ion-input>
-    <ion-input required placeholder="Adicionales"></ion-input>				
+    <ion-label routerLink="/adicionales">Adicionales</ion-label><br><br>
+    <ion-label routerLink="/decorado">Decorado</ion-label>		<br>
     <ion-input required placeholder="Mesa"></ion-input>
     <ion-input required placeholder="Nombre del festejado"></ion-input>
         
-      <ion-button color=#ff912f><b>Reservar</b></ion-button>
+      <ion-button routerLink="/pago" color=#ff912f><b>Reservar</b></ion-button>
       
   </ion-content>

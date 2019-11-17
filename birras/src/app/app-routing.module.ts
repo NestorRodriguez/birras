@@ -30,6 +30,30 @@ const routes: Routes = [
   {
     path: 'reservas',
     loadChildren: () => import('./reservas/reservas.module').then( m => m.ReservasPageModule)
+  },
+  {
+    path: 'decorado',
+    loadChildren: () => import('./decorado/decorado.module').then( m => m.DecoradoPageModule)
+  },
+  {
+    path: 'adicionales',
+    loadChildren: () => import('./adicionales/adicionales.module').then( m => m.AdicionalesPageModule)
+  },
+  {
+    path: 'pago',
+    loadChildren: () => import('./pago/pago.module').then( m => m.PagoPageModule)
+  },
+   {
+    path: 'tarjeta-credito',
+    loadChildren: () => import('./tarjeta-credito/tarjeta-credito.module').then( m => m.TarjetaCreditoPageModule)
+  },
+  {
+    path: 'tarjeta-debito',
+    loadChildren: () => import('./tarjeta-debito/tarjeta-debito.module').then( m => m.TarjetaDebitoPageModule)
+  },
+  {
+    path: 'pse',
+    loadChildren: () => import('./pse/pse.module').then( m => m.PsePageModule)
   }
 ];
 

@@ -4,17 +4,18 @@
   </ion-toolbar>
   </ion-header>
   <ion-content>
-          <ion-input required placeholder="Nombre establecimiento"></ion-input>
-          <ion-input required placeholder="Direccion"></ion-input>
-          <ion-input required placeholder="Nit"></ion-input>
-          <ion-input required placeholder="Horarios"></ion-input>
-          <ion-input required placeholder="Descipcion"></ion-input>
-          <ion-input required placeholder="Cantidad mesas"></ion-input>
-          <ion-input required placeholder="Fotos"></ion-input>
-          <ion-input required placeholder="Email"></ion-input>
-          <ion-input required placeholder="Nombre usuario"></ion-input>
-          <ion-input required placeholder="contraseña"></ion-input>
+      <form [formGroup]="todo" (ngSubmit)="logForm()">
+          <ion-input formControlName="nombre" required placeholder="Nombre establecimiento"></ion-input>
+          <ion-input formControlName="direccion" required placeholder="Direccion"></ion-input>
+          <ion-input formControlName="nit" required placeholder="Nit"></ion-input>
+          <ion-input formControlName="horarios" required placeholder="Horarios"></ion-input>
+          <ion-input formControlName="descripcion" required placeholder="Descipcion"></ion-input>
+          <ion-input formControlName="mesas" required placeholder="Cantidad mesas"></ion-input>
+          <ion-input formControlName="fotos" required placeholder="Fotos"></ion-input>
+          <ion-input formControlName="email" required placeholder="Email"></ion-input>
+          <ion-input formControlName="usuario" required placeholder="Nombre usuario"></ion-input>
+          <ion-input formControlName="contraseña" required placeholder="contraseña"></ion-input>
         
-      <ion-button color=#ff912f><b>Registrate</b></ion-button>
-         
+      <ion-button routerLink="/login" color=#ff912f><b>Registrate</b></ion-button>
+         </form>
   </ion-content>

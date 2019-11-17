@@ -4,20 +4,22 @@
   </ion-toolbar>    
     </ion-header>
 <ion-content>  
+  <form [formGroup]="todo" (ngSubmit)="logForm()">
   <br><br>
 <ion-item>
       <ion-label>Rol</ion-label>
-      <ion-select interface="popover">
+      <ion-select  interface="popover">
         <ion-select-option value="nes">Dueño Bar</ion-select-option>
         <ion-select-option value="n64">Usuario</ion-select-option>
       </ion-select>
     </ion-item>
     <br>
-  <ion-input required placeholder="Email ò Usuario"></ion-input>
+  <ion-input formControlName="usuario" required placeholder="Email ò Usuario"></ion-input>
   <br>
-    <ion-input required placeholder="Contraseña"></ion-input>
+    <ion-input formControlName="contraseña" required placeholder="Contraseña"></ion-input>
 <br><br>
-            <ion-button color=#ff912f><b>Ingresa</b></ion-button>
-<ion-button color=#ff912f><b>Registrate</b></ion-button>
-  
+<ion-button routerLink="/novedades" color=#ff912f><b>Ingresa</b></ion-button>
+<ion-button routerLink="/registro-usuarios" color=#ff912f><b>Registro Usuario</b></ion-button>
+<ion-button routerLink="/registro-bares" color=#ff912f><b>Registro Bar</b></ion-button>
+</form>
 </ion-content>

@@ -1,50 +1,60 @@
 <ion-header>
   <ion-toolbar>
-  <ion-title><b>BARES</b></ion-title>
+    <ion-title><b>BARES</b></ion-title>
   </ion-toolbar>
-  </ion-header>
-  <ion-content >
-      <ion-list>
-        <ion-radio-group>
-          <ion-item>
-              <ion-slides>
-                  <ion-slide><img src="assets/LOGO BIRRAS.png" /></ion-slide>
-                  <ion-slide><img src="assets/LOGO BIRRAS.png" /></ion-slide>
-                  <ion-slide><img src="assets/LOGO BIRRAS.png" /></ion-slide>
-                </ion-slides>
-                <br><br><br>
-            <ion-label>Opera</ion-label>
-            <ion-label>Direccion</ion-label>
-            <ion-label>Horarios</ion-label>
-            <ion-label>Descripcion</ion-label>
-            <ion-radio slot="start" color="success" value="apple"></ion-radio>
-          </ion-item>
+</ion-header>
+<ion-content fullscreen padding scroll-y="false">
+  <ion-slides>
 
-          <ion-item>
-              <ion-slides>
-                  <ion-slide><img src="assets/LOGO BIRRAS.png" /></ion-slide>
-                  <ion-slide><img src="assets/LOGO BIRRAS.png" /></ion-slide>
-                  <ion-slide><img src="assets/LOGO BIRRAS.png" /></ion-slide>
-                </ion-slides>
-            <ion-label>Genoveva</ion-label>
-            <ion-label>Direccion</ion-label>
-            <ion-label>Horarios</ion-label>
-            <ion-label>Descripcion</ion-label>
-            <ion-radio slot="start" color="tertiary" value="grape" checked></ion-radio>
-          </ion-item>
+    <ion-slide>
+      <ion-label>OPERA</ion-label><br><br>
+      <ion-slides>
+        <ion-slide>
+          <img src="assets/opera.PNG" />
+        </ion-slide>
+        <ion-slide>
+          <img src="assets/plano.PNG" />
+        </ion-slide>
+      </ion-slides><br>
+      <ion-radio slot="start" color="success" value="Despedida de soltera"></ion-radio><br><br>
+      <ion-label>Direccion</ion-label><br>
+      <ion-label>Horarios</ion-label><br>
+      <ion-label>Descripcion</ion-label>
+    </ion-slide>
 
-          <ion-item>
-              <ion-slides>
-                  <ion-slide><img src="assets/LOGO BIRRAS.png" /></ion-slide>
-                  <ion-slide><img src="assets/LOGO BIRRAS.png" /></ion-slide>
-                  <ion-slide><img src="assets/LOGO BIRRAS.png" /></ion-slide>
-                </ion-slides>
-            <ion-label>Centrico</ion-label>
-            <ion-label>Direccion</ion-label>
-            <ion-label>Horarios</ion-label>
-            <ion-label>Descripcion</ion-label>
-            <ion-radio slot="start" color="danger" value="cherry"></ion-radio>
-          </ion-item>
-        </ion-radio-group>  
-      </ion-list>
-    </ion-content>
+    <ion-slide>
+      <ion-label>GENOVEVA</ion-label><br><br>
+      <ion-slides>
+        <ion-slide>
+          <img src="assets/genoveva.PNG" />
+        </ion-slide>
+        <ion-slide>
+          <img src="assets/plano.PNG" />
+        </ion-slide>
+      </ion-slides><br>
+      <ion-radio slot="start" color="success" value="Despedida de soltero"></ion-radio><br><br>
+      <ion-label>Direccion</ion-label><br>
+      <ion-label>Horarios</ion-label><br>
+      <ion-label>Descripcion</ion-label><br>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-label>CENTRICO</ion-label><br><br>
+      <ion-slides>
+        <ion-slide>
+          <img src="assets/centrico.PNG" />
+        </ion-slide>
+        <ion-slide>
+          <img src="assets/plano.PNG" />
+        </ion-slide>
+      </ion-slides><br>
+      <ion-radio slot="start" color="success" value="Cumpleaños"></ion-radio><br><br>
+      <ion-label>Direccion</ion-label><br>
+      <ion-label>Horarios</ion-label><br>
+      <ion-label>Descripcion</ion-label>
+    </ion-slide>
+
+  </ion-slides>
+  <br><br><br>
+  <ion-button routerLink="/reservas" color=#ff912f><b>Escoger</b></ion-button>
+</ion-content>
