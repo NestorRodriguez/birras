@@ -54,6 +54,10 @@ const routes: Routes = [
   {
     path: 'pse',
     loadChildren: () => import('./pse/pse.module').then( m => m.PsePageModule)
+  },
+  {
+    path: 'cancelar',
+    loadChildren: () => import('./cancelar/cancelar.module').then( m => m.CancelarPageModule)
   }
 ];
 

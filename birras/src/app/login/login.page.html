@@ -4,22 +4,27 @@
   </ion-toolbar>    
     </ion-header>
 <ion-content>  
-  <form [formGroup]="todo" (ngSubmit)="logForm()">
+  <form (ngSubmit)="enviarData(formulario)" #formulario="ngForm">
   <br><br>
 <ion-item>
       <ion-label>Rol</ion-label>
       <ion-select  interface="popover">
         <ion-select-option value="nes">Dueño Bar</ion-select-option>
+
         <ion-select-option value="n64">Usuario</ion-select-option>
       </ion-select>
     </ion-item>
     <br>
-  <ion-input formControlName="usuario" required placeholder="Email ò Usuario"></ion-input>
+  <ion-input required type="text" [(ngModel)]="model.usuario"  name="email" placeholder="Email ò Usuario"></ion-input>
+  <label>Por favor digite su usuario</label>
   <br>
-    <ion-input formControlName="contraseña" required placeholder="Contraseña"></ion-input>
-<br><br>
-<ion-button routerLink="/novedades" color=#ff912f><b>Ingresa</b></ion-button>
-<ion-button routerLink="/registro-usuarios" color=#ff912f><b>Registro Usuario</b></ion-button>
-<ion-button routerLink="/registro-bares" color=#ff912f><b>Registro Bar</b></ion-button>
+    <ion-input required type="password" [(ngModel)]="model.clave"  name="clave" placeholder="Contraseña"></ion-input>
+    <label>Por favor digite su usuario</label>
+    <br><br>
+<ion-button  type="submit" color=#ff912f [disabled]="!isenabled"><b>Ingresa</b></ion-button>
+
+
+<ion-button routerLink="/registro-usuarios" color=#ff912f [disabled]="!isenabled"><b>Registro Usuario</b></ion-button>
+<ion-button routerLink="/registro-bares" type="submit" color=#ff912f expand=""><b>Registro Bar</b></ion-button>
 </form>
 </ion-content>

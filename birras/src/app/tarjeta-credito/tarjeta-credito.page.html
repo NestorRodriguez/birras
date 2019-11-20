@@ -4,22 +4,23 @@
     </ion-toolbar>
     </ion-header>
     <ion-content>
+            <form (ngSubmit)="enviarData(formulario)" #formulario="ngForm">
         <img src="assets/credito.PNG"/>
         <div>
             <ion-label>DECORADO:$</ion-label><br>
             <ion-label>ADICIONALES:$</ion-label> <br>
-            <ion-label>TOTAL A PAGAR:$</ion-label>        
+            <ion-label>TOTAL A PAGAR:${{total}}</ion-label>       
         </div>                 
         
-      <ion-input required placeholder="Nombre propietario"></ion-input>
-      <ion-input required placeholder="Numero de tarjeta"></ion-input>
-      <ion-input required placeholder="Codigo de seguridad"></ion-input>
+      <ion-input required type="text" [(ngModel)]="model.nombre" name="nombre" placeholder="Nombre propietario"></ion-input>
+      <ion-input required type="text" [(ngModel)]="model.tarjeta" name="tarjeta" placeholder="Numero de tarjeta"></ion-input>
+      <ion-input required type="text" [(ngModel)]="model.codigo" name="codigo" placeholder="Codigo de seguridad"></ion-input>
       <ion-item>
               <ion-label>Fecha vencimiento</ion-label>
               <ion-datetime value="1990-02-19" placeholder="Select Date"></ion-datetime>
             </ion-item>
-        
+            <ion-input required type="text" [(ngModel)]="model.cuotas" name="cuotas" placeholder="Cuotas"></ion-input>
           
-        <ion-button color=#ff912f><b>Pago</b></ion-button>
-        
+        <ion-button type="submit" (click)="presentAlert()" [disabled]="!isenabled" color=#ff912f><b>Pago</b></ion-button>
+    </form>
     </ion-content>

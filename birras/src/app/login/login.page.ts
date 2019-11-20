@@ -1,18 +1,28 @@
-import { Component} from '@angular/core';
-import {  Validators,FormBuilder,FormGroup } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { NgForm, EmailValidator, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage {
-private todo:FormGroup;
+export class LoginPage  implements OnInit{
+  registros: any[] = [];
+  errorMessage = '';
 
-  constructor(private formBuilder:FormBuilder) { 
-    this.todo=this.formBuilder.group({
-usuario:['',Validators.required],
-contraseña:['',Validators.required],
-    })
+  constructor() {    }
+  model: any = {};
+  isenabled=false; 
+  ngOnInit() {
+    this.model = {
+      email : null,
+      clave : null
+    };
   }
-}
+  enviarData(formulario: NgForm){
+    formulario.value.email
+    formulario.value.clave
+    console.log(formulario);
+  }
+  
+    }

@@ -4,18 +4,18 @@
   </ion-toolbar>
   </ion-header>
   <ion-content>
-      <form [formGroup]="todo" (ngSubmit)="logForm()">
-          <ion-input formControlName="nombre" required placeholder="Nombre establecimiento"></ion-input>
-          <ion-input formControlName="direccion" required placeholder="Direccion"></ion-input>
-          <ion-input formControlName="nit" required placeholder="Nit"></ion-input>
-          <ion-input formControlName="horarios" required placeholder="Horarios"></ion-input>
-          <ion-input formControlName="descripcion" required placeholder="Descipcion"></ion-input>
-          <ion-input formControlName="mesas" required placeholder="Cantidad mesas"></ion-input>
-          <ion-input formControlName="fotos" required placeholder="Fotos"></ion-input>
-          <ion-input formControlName="email" required placeholder="Email"></ion-input>
-          <ion-input formControlName="usuario" required placeholder="Nombre usuario"></ion-input>
-          <ion-input formControlName="contraseña" required placeholder="contraseña"></ion-input>
+      <form (ngSubmit)="enviarData(formulario)" #formulario="ngForm">
+          <ion-input required type="text" [(ngModel)]="model.nombre" name="nombre" placeholder="Nombre establecimiento"></ion-input>
+          <ion-input required type="text" [(ngModel)]="model.direccion" name="direccion" placeholder="Direccion"></ion-input>
+          <ion-input required type="text" [(ngModel)]="model.nit" name="nit" placeholder="Nit"></ion-input>
+          <ion-input required type="text" [(ngModel)]="model.horarios" name="horarios" placeholder="Horarios"></ion-input>
+          <ion-input required type="text" [(ngModel)]="model.descripcion" name="descripcion" placeholder="Descipcion"></ion-input>
+          <ion-input required type="text" [(ngModel)]="model.mesas" name="mesas" placeholder="Cantidad mesas"></ion-input>
+          <ion-input required type="text" [(ngModel)]="model.fotos" name="fotos" placeholder="Fotos"></ion-input>
+          <ion-input required type="email" [(ngModel)]="model.email" name="email" placeholder="Email"></ion-input>
+          <ion-input required type="text" [(ngModel)]="model.usuario" name="usuario" placeholder="Nombre usuario"></ion-input>
+          <ion-input required type="password" [(ngModel)]="model.clave" name="clave" placeholder="contraseña"></ion-input>
         
-      <ion-button routerLink="/login" color=#ff912f><b>Registrate</b></ion-button>
+      <ion-button color=#ff912f type="submit" [disabled]="!isenabled" ><b>Registrate</b></ion-button>
          </form>
   </ion-content>

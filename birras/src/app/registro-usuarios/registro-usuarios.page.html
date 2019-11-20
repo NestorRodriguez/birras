@@ -4,19 +4,19 @@
   </ion-toolbar>
   </ion-header>
   <ion-content>
-      <form [formGroup]="todo" (ngSubmit)="logForm()">
-    <ion-input formControlName="nombre" required placeholder="Nombres"></ion-input>
-    <ion-input formControlName="apellido" required placeholder="Apellidos"></ion-input>
-    <ion-input formControlName="cedula" required placeholder="Cedula"></ion-input>
+      <form (ngSubmit)="enviarData(formulario)" #formulario="ngForm">
+    <ion-input required type="text" [(ngModel)]="model.nombre" name="nombre" placeholder="Nombres"></ion-input>
+    <ion-input required type="text" [(ngModel)]="model.apellido" name="apellido" placeholder="Apellidos"></ion-input>
+    <ion-input required type="text" [(ngModel)]="model.cedula" name="cedula" placeholder="Cedula"></ion-input>
     <ion-item>
             <ion-label>Fecha nacimiento</ion-label>
             <ion-datetime value="1990-02-19" placeholder="Select Date"></ion-datetime>
           </ion-item>
-      <ion-input formControlName="direccion" required placeholder="Direccion"></ion-input>				
-      <ion-input formControlName="email" required placeholder="Email"></ion-input>
-      <ion-input formControlName="usuario" required placeholder="Nombre usuario"></ion-input>
-      <ion-input formControlName="contraseña" required placeholder="contraseña"></ion-input>
+      <ion-input required type="text" [(ngModel)]="model.direccion" name="direccion" placeholder="Direccion"></ion-input>				
+      <ion-input required type="email" [(ngModel)]="model.email" name="email" placeholder="Email"></ion-input>
+      <ion-input required type="text" [(ngModel)]="model.usuario" name="usuario" placeholder="Nombre usuario"></ion-input>
+      <ion-input required type="password" [(ngModel)]="model.clave" name="clave" placeholder="contraseña"></ion-input>
         
-      <ion-button routerLink="/login" color=#ff912f><b>Registrate</b></ion-button>
+      <ion-button type="submit" [disabled]="!isenabled" color=#ff912f><b>Registrate</b></ion-button>
       </form>
   </ion-content>
