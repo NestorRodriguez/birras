@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm, EmailValidator, NgModel } from '@angular/forms';
+import { ObtenerdataService } from '../services/obtenerdata.service';
+import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-reservas',
@@ -10,19 +13,30 @@ export class ReservasPage implements OnInit {
   registros: any[] = [];
   errorMessage = '';
 
-  constructor() { }  
+  constructor(private router: Router,public alertController: AlertController, private sendData: ObtenerdataService) { }  
 model: any = {};
-  isenabled=false; 
   ngOnInit() {
     this.model = {
       personas:null, 
       nombre:null
     };
   }
-  enviarData(formulario: NgForm){
-    formulario.value.personas
-    formulario.value.nombre    
-    console.log(formulario);
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Error',
+      message: 'Por favor diligencie todos los campos para continuar',
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
-  
+  public enviarData( formulario: NgForm ) {
+    if (formulario.valid) {
+      this.sendData.obtenerData(this.model);
+      this.router.navigateByUrl('pago');
+    } else {
+      this.presentAlert();
+
     }
+  }
+}

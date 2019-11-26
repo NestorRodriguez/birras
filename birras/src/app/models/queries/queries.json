@@ -1,4 +1,14 @@
 {
-  "users" : "SELECT * FROM `users`",
-  "profiles" : "SELECT * FROM `profiles` WHERE active = :active"
+  "adicionales" : "SELECT * FROM `usuarios",
+  "bares" : "SELECT * FROM `usuarios",
+  "decorado" : "SELECT * FROM `usuarios",
+  "metodos_pago" : "SELECT * FROM `usuarios",
+  "motivo" : "SELECT * FROM `usuarios",
+  "pse" : "SELECT * FROM `usuarios",
+  "registrate" : "SELECT * FROM `usuarios",
+  "reserva" : "SELECT * FROM `usuarios",
+  "roles" : "SELECT * FROM `roles",
+  "tarjeta_credito" : "SELECT * FROM `tarjeta_credito",
+  "tarjeta_debito" : "SELECT * FROM `tarjeta_debito",
+  "usuarios" : "SELECT * FROM `usuarios"  
 }

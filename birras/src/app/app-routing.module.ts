@@ -58,6 +58,10 @@ const routes: Routes = [
   {
     path: 'cancelar',
     loadChildren: () => import('./cancelar/cancelar.module').then( m => m.CancelarPageModule)
+  },
+  {
+    path: 'visualizar',
+    loadChildren: () => import('./visualizar/visualizar.module').then( m => m.VisualizarPageModule)
   }
 ];
 

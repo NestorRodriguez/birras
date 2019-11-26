@@ -6,7 +6,7 @@
   <ion-content>
       <form (ngSubmit)="enviarData(formulario)" #formulario="ngForm">
       <ion-label routerLink="/bares">Bar</ion-label>     
-    <ion-input required type="text" [(ngModel)]="model.personas" name="personas" placeholder="N° Personas"></ion-input>
+    <ion-input  [(ngModel)]="model.personas" name="personas" placeholder="N° Personas" required type="text"></ion-input>
     <ion-item>
         <ion-label>Motivo</ion-label>
         <ion-select required interface="popover">
@@ -20,12 +20,13 @@
           <ion-select-option value="n64">Halloween</ion-select-option>
         </ion-select>
       </ion-item>
-    <ion-input required placeholder="Dedicatoria"></ion-input>
+    <ion-input placeholder="Dedicatoria"></ion-input>
     <ion-label routerLink="/adicionales">Adicionales</ion-label><br><br>
     <ion-label routerLink="/decorado">Decorado</ion-label>		<br>
     <ion-input required placeholder="Mesa"></ion-input>
-    <ion-input required type="text" [(ngModel)]="model.nombre" name="nombre" placeholder="Nombre del festejado"></ion-input>
+    <ion-input [(ngModel)]="model.nombre" name="nombre" placeholder="Nombre del festejado" required type="text" ></ion-input>
         
-      <ion-button type="submit" [disabled]="!isenabled" color=#ff912f><b>Reservar</b></ion-button>
+      <ion-button type="submit"  color=#ff912f><b>Reservar</b></ion-button>
     </form>
   </ion-content>
+  

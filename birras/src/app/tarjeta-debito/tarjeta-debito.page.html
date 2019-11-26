@@ -13,15 +13,15 @@
             <ion-label>TOTAL A PAGAR:${{total}}</ion-label>        
         </div>                 
         
-      <ion-input required type="text" [(ngModel)]="model.nombre" name="nombre" placeholder="Nombre propietario"></ion-input>
-      <ion-input required type="text" [(ngModel)]="model.tarjeta" name="tarjeta" placeholder="Numero de tarjeta"></ion-input>
-      <ion-input required type="text" [(ngModel)]="model.codigo" name="codigo" placeholder="Codigo de seguridad"></ion-input>
+      <ion-input [(ngModel)]="model.nombre" name="nombre" placeholder="Nombre propietario" required type="text"></ion-input>
+      <ion-input [(ngModel)]="model.tarjeta" name="tarjeta" placeholder="Numero de tarjeta" required type="text"></ion-input>
+      <ion-input [(ngModel)]="model.codigo" name="codigo" placeholder="Codigo de seguridad" required type="text" ></ion-input>
       <ion-item>
               <ion-label>Fecha vencimiento</ion-label>
               <ion-datetime value="1990-02-19" placeholder="Select Date"></ion-datetime>
             </ion-item>
         
           
-        <ion-button type="submit" (click)="presentAlert()" [disabled]="!isenabled" color=#ff912f><b>Pago</b></ion-button>
+        <ion-button type="submit" color=#ff912f><b>Pago</b></ion-button>
     </form>
     </ion-content>

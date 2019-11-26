@@ -15,6 +15,13 @@ ion-header {
     height: 30px;
     }
     
+    ion-footer{
+        --ion-background-color: #cb950f !important;
+        text-align: center;
+        align-content: center;
+        --color:#ffffff;
+    }
+
     ion-content {
     --ion-background-color: #efb810 !important;
     text-align: center;

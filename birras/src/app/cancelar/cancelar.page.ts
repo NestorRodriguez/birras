@@ -31,7 +31,7 @@ export class CancelarPage implements OnInit {
             text: 'Ok',
             handler: () => {
             console.log('Confirm Ok');
-            this.router.navigate(['/tipocomercio']);
+            this.router.navigate(['/novedades']);
             }
           }
       ]

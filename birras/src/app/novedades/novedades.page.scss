@@ -9,11 +9,7 @@ ion-header {
     --color:#ffffff;
     }
     
-    ion-img {
-    width: 30%;
-    height: 30px;
-    }
-    
+       
     ion-content {
     --ion-background-color: #efb810 !important;
     --color:#ffffff;
@@ -47,8 +43,14 @@ ion-header {
     }
 
     ion-img{
-        width: 60%;
-        height: 60%;
+        width: 90%;
+        height: 90%;
         align-content: center;
+
+    }
+
+    img{
+        width: 15%;
+        height: 15%;
 
     }

@@ -7,13 +7,13 @@ class TarjetaCreditoService extends Service{
     constructor() {
         const modelOptions = {
             create: {
-                attributes: ["id_decorado", "decorado"]
+                attributes: ["id_decorado", "decorado","precio"]
             },
             one: {
-                attributes: ["id_decorado", "decorado"]
+                attributes: ["id_decorado", "decorado","precio"]
             },
             all: {
-                attributes: ["id_decorado", "decorado"]
+                attributes: ["id_decorado", "decorado","precio"]
             },
         };
         super(Model, modelOptions);

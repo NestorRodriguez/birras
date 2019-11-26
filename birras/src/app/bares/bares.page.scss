@@ -10,11 +10,7 @@ ion-header {
     --color:#ffffff;
     }
     
-    ion-img {
-    width: 30%;
-    height: 30px;
-    }
-    
+        
     ion-content {
     --ion-background-color: #efb810 !important;
     text-align: center;
@@ -55,6 +51,18 @@ ion-header {
         text-align: center;
 
     }
+
+    ion-img{
+      width: 15%;
+      height: 15%;
+  }
+  
+  ion-footer{
+    --ion-background-color: #cb950f !important;
+    text-align: center;
+    align-content: center;
+    --color:#ffffff;
+}
 
       ion-slide{
         display: block;

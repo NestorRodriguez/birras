@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm, EmailValidator, NgModel } from '@angular/forms';
+import { ObtenerdataService } from '../services/obtenerdata.service';
+import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-registro-bares',
@@ -10,9 +13,8 @@ export class RegistroBaresPage implements OnInit  {
   registros: any[] = [];
   errorMessage = '';
 
-  constructor() {    }
+  constructor(private router: Router,public alertController: AlertController, private sendData: ObtenerdataService) { }  
   model: any = {};
-  isenabled=false; 
   ngOnInit() {
     this.model = {
       nombre:null,      
@@ -27,18 +29,22 @@ export class RegistroBaresPage implements OnInit  {
       clave : null
     };
   }
-  enviarData(formulario: NgForm){
-    formulario.value.nombre 
-    formulario.value.direccion
-    formulario.value.nit
-    formulario.value.horarios
-    formulario.value.descripcion
-    formulario.value.mesas
-    formulario.value.fotos
-    formulario.value.email
-    formulario.value.usuario
-    formulario.value.clave
-    console.log(formulario);
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Error',
+      message: 'Por favor diligencie todos los campos para continuar',
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
-  
+  public enviarData( formulario: NgForm ) {
+    if (formulario.valid) {
+      this.sendData.obtenerData(this.model);
+      this.router.navigateByUrl('login');
+    } else {
+      this.presentAlert();
+
     }
+  }
+}

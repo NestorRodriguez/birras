@@ -3,8 +3,7 @@
  * @author jaimecastrillon@gmail.com
  */
 
-module.exports = (sequelize, DataTypes) => sequelize.define('categories',
-    {
+module.exports = (sequelize, DataTypes) => sequelize.define('categories', {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,

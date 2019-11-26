@@ -15,16 +15,16 @@
       </ion-select>
     </ion-item>
     <br>
-  <ion-input required type="text" [(ngModel)]="model.usuario"  name="email" placeholder="Email ò Usuario"></ion-input>
-  <label>Por favor digite su usuario</label>
+  <ion-input [(ngModel)]="model.usuario"  name="email" placeholder="Email ò Usuario" required type="text"></ion-input>
+  
   <br>
-    <ion-input required type="password" [(ngModel)]="model.clave"  name="clave" placeholder="Contraseña"></ion-input>
-    <label>Por favor digite su usuario</label>
+    <ion-input [(ngModel)]="model.clave"  name="clave" placeholder="Contraseña" required type="password"></ion-input>
+    
     <br><br>
-<ion-button  type="submit" color=#ff912f [disabled]="!isenabled"><b>Ingresa</b></ion-button>
+<ion-button  type="submit" color=#ff912f ><b>Ingresa</b></ion-button>
 
 
-<ion-button routerLink="/registro-usuarios" color=#ff912f [disabled]="!isenabled"><b>Registro Usuario</b></ion-button>
+<ion-button routerLink="/registro-usuarios" color=#ff912f ><b>Registro Usuario</b></ion-button>
 <ion-button routerLink="/registro-bares" type="submit" color=#ff912f expand=""><b>Registro Bar</b></ion-button>
 </form>
 </ion-content>

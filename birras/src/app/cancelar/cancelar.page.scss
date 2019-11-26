@@ -11,8 +11,15 @@ ion-header {
     }
     
     ion-img {
-    width: 30%;
-    height: 30px;
+    width: 15%;
+    height: 15%;
+    }
+
+    ion-footer{
+        --ion-background-color: #cb950f !important;
+        text-align: center;
+        align-content: center;
+        --color:#ffffff;
     }
     
     ion-content {
@@ -58,10 +65,3 @@ ion-header {
         margin-left: 10px;
         --color:#ffffff;
         }
-
-    ion-img{
-        width: 60%;
-        height: 60%;
-        align-content: center;
-
-    }
