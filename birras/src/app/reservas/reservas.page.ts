@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ObtenerdataService } from '../services/obtenerdata.service';
+import { ObtenerdataService } from '../backend/services/obtenerdata.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { AlertController } from '@ionic/angular';

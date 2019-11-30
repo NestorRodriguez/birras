@@ -46,8 +46,10 @@ ion-header {
     }
     
     ion-select{
-    text-align: right;
+    text-align: center;
     --color:#ffffff;
+    --padding-end:15px;
+    --padding-start:15px;
     }
 
     ion-button{
@@ -61,9 +63,9 @@ ion-header {
         align-content:center;
         text-align: center;
         margin-left: 10px;
-        margin-left: 10px;
-        margin-left: 10px;
         --color:#ffffff;
+        --padding-end:15px;
+    --padding-start:15px;
         }
 
     ion-img{
