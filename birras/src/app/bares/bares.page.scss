@@ -10,6 +10,7 @@ ion-header {
     --color:#ffffff;
     }
     
+    
         
     ion-content {
     --ion-background-color: #efb810 !important;
@@ -28,15 +29,16 @@ ion-header {
     }
     
     ion-label{
-    text-align: left;
-    --color:#ffffff;
-    }
+      text-align: left;
+      --color:#ffffff;
+      }
     
     ion-select{
-    text-align: right;
-    --color:#ffffff;
-    }
-
+      text-align: center;
+      --color:#ffffff;
+      --padding-end:15px;
+      --padding-start:15px;
+      }
     ion-button{
         background: #ff912f;
         text-align: center;
@@ -57,12 +59,12 @@ ion-header {
   text-align: center;
   align-content: center;
   --color:#ffffff;
-  font-size: 16px;
+  font-size: 14px;
 }
 
     ion-img{
-      width: 15%;
-      height: 15%;
+      width: 12%;
+      height: 12%;
   }
   
   ion-footer{
@@ -83,3 +85,12 @@ ion-header {
         align-content: center;
         text-align: center;
       }
+
+      ion-item {
+        align-content:center;
+        text-align: center;
+        margin-left: 10px;
+        --color:#ffffff;
+        --padding-end:15px;
+    --padding-start:15px;
+        }

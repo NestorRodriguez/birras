@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ObtenerdataService } from '../backend/services/obtenerdata.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
+import { ObtenerdataService } from '../services/obtenerdata.service';
 
 @Component({
   selector: 'app-tarjeta-debito',
@@ -17,7 +17,7 @@ export class TarjetaDebitoPage implements OnInit {
   constructor(private router: Router,public alertController: AlertController, private sendData: ObtenerdataService) { }  
   model: any = {};
   ngOnInit() {
-    this.total=70000+200000;
+    //this.total=70000+200000;
     this.model = {
       banco:null,   
       nombre:null,
@@ -53,8 +53,8 @@ export class TarjetaDebitoPage implements OnInit {
   }
   async presentAlert() {
     const alert = await this.alertController.create({
-      header: 'Error',
-      message: 'Por favor diligencie todos los campos para continuar',
+      header: 'ADVERTENCIA',
+      message: 'Por favor diligencia todos los campos para continuar',
       buttons: ['OK']
     });
 

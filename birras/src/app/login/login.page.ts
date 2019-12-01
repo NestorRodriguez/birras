@@ -4,8 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
-import { ObtenerdataService } from '../backend/services/obtenerdata.service';
-
+import { ObtenerdataService } from '../services/obtenerdata.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -25,8 +24,8 @@ export class LoginPage  implements OnInit{
   }
   async presentAlert() {
     const alert = await this.alertController.create({
-      header: 'Error',
-      message: 'Por favor diligencie todos los campos para continuar',
+      header: 'ADVERTENCIA',
+      message: 'Por favor diligencia todos los campos para continuar',
       buttons: ['OK']
     });
 
