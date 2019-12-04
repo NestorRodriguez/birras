@@ -5,11 +5,13 @@ ion-header {
     }
     
     ion-title {
+        padding-top: 40px;
+        padding-left: 5px;
+        padding-right: 75px;
     text-align: center;
     --color:#ffffff;
     }
-    
-       
+           
     ion-content {
     --ion-background-color: #efb810 !important;
     --color:#ffffff;
@@ -20,8 +22,6 @@ ion-header {
     ion-slide {
     align-content:center;
     text-align: center;
-    margin-left: 10px;
-    margin-left: 10px;
     margin-left: 10px;
     --color:#ffffff;
     }
@@ -48,9 +48,16 @@ ion-header {
         align-content: center;
 
     }
-
-    img{
-        width: 15%;
-        height: 15%;
-
-    }
+.reserva{
+    width: 15%;
+    height: 15%;
+   padding-left: 2px;
+   padding-top: 20px;
+}
+.historial{
+    width: 15%;
+    height: 15%;   
+   padding-left: 2px;
+   padding-top: 20px;
+}
+    

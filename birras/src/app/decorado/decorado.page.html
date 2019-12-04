@@ -11,59 +11,62 @@
 
         <ion-slide>          
             <ion-label>Despedida de soltera(o)</ion-label><br><br>
-          <img src="assets/despedida de soltera.PNG"/><br><br>
-          <ion-label>50.000</ion-label><br><br>
-          <ion-radio slot="start" color="success" value="apple"></ion-radio>
+          <img src="assets/despedida de soltera.PNG"/>
         </ion-slide>
 
         <ion-slide>
             <ion-label>Cumpleaños</ion-label><br><br>
-          <img src="assets/cumpleaños.PNG"/><br><br>
-          <ion-label>40.000</ion-label><br><br>
-          <ion-radio slot="start" color="success" value="apple"></ion-radio>
+          <img src="assets/cumpleaños.PNG"/>
         </ion-slide>
 
         <ion-slide>
             <ion-label>Dia de la mujer</ion-label><br><br>
-          <img src="assets/dia mujer.PNG"/><br><br>
-          <ion-label>32.000</ion-label><br><br>
-          <ion-radio slot="start" color="success" value="apple"></ion-radio>
+          <img src="assets/dia mujer.PNG"/>
         </ion-slide>
 
         <ion-slide>
             <ion-label>Dia del hombre</ion-label><br><br>
-            <img src="assets/dia hombre.PNG"/><br><br>
-            <ion-label>33.000</ion-label><br><br>
-            <ion-radio slot="start" color="success" value="apple"></ion-radio>
+            <img src="assets/dia hombre.PNG"/>
           </ion-slide>
 
         <ion-slide>
             <ion-label>Amor y amistad</ion-label><br><br>
-          <img src="assets/amor y amistad.PNG"/><br><br>
-          <ion-label>26.000</ion-label><br><br>
-          <ion-radio slot="start" color="success" value="apple"></ion-radio>
+          <img src="assets/amor y amistad.PNG"/>
         </ion-slide>
 
         <ion-slide>
             <ion-label>Halloween</ion-label><br><br>
-            <img src="assets/halloween.PNG"/><br><br>
-            <ion-label>41.000</ion-label><br><br>
-            <ion-radio slot="start" color="success" value="apple"></ion-radio>
+            <img src="assets/halloween.PNG"/>
         </ion-slide>
 
         <ion-slide>
             <ion-label>Año nuevo</ion-label><br><br>
-            <img src="assets/año nuevo.PNG"/><br><br>
-            <ion-label>32.000</ion-label><br><br>
-            <ion-radio slot="start" color="success" value="apple"></ion-radio>
+            <img src="assets/año nuevo.PNG"/>
         </ion-slide>
         
       </ion-slides>
+      <form (ngSubmit)="enviarData(formulario)" #formulario="ngForm">
+        <ion-item>
+          <ion-select [(ngModel)]="model.motivo" name="motivo" interface="popover" required placeholder="motivo">
+            <ion-select-option value="soltera">Despedida de soltera</ion-select-option>
+            <ion-select-option value="soltero">Despedida de soltero</ion-select-option>
+            <ion-select-option value="hombre">Dia del hombre</ion-select-option>
+            <ion-select-option value="mujer">Dia de la mujer</ion-select-option>
+            <ion-select-option value="año">Año nuevo</ion-select-option>
+            <ion-select-option value="cumpleaños">Cumpleaños</ion-select-option>
+            <ion-select-option value="amistad">Amor y amistad</ion-select-option>
+            <ion-select-option value="halloween">Halloween</ion-select-option>
+          </ion-select>
+        </ion-item> 
+        <ion-item>
+          <ion-select [(ngModel)]="model.precios" name="precios" interface="popover" required placeholder="precios">
+            <ion-select-option value="20.000">Personas: 10 $ 20.000</ion-select-option>
+            <ion-select-option value="35.000">Personas: 15 $ 30.000</ion-select-option> 
+            <ion-select-option value="40.000">Personas: 20 $ 40.000</ion-select-option>               
+          </ion-select>
+        </ion-item>
+        <ion-button type="submit" color=#ff912f><b>Escoger</b></ion-button>
+        </form>
     </ion-content>
-    <ion-footer>
-        <ion-toolbar>
-            <ion-button routerLink="/reservas" color=#ff912f><b>Escoger</b></ion-button>
-        </ion-toolbar>
-      </ion-footer>
   
 

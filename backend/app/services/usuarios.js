@@ -30,24 +30,26 @@ class UsuariosService extends Service {
 
     async login(nombre_usuario, access) {
         try {
-            const usuarios = await this.model.scope('withPassword').findOne({
+            const usuarios = await this.model.all('withPassword').findOne({
                 where: {
-                    [Op.or]: [{ nombre_usuario: nombre_usuario }, { mail: nombre_usuario }]
+                    [Op.or]: [{ nombre_usuario: nombre_usuario }, { contraseña: access }]
                 }
             });
-
             if(usuarios && access) {
                 if(usuarios.active){
                     const isValid = await Hash.validateHash(access, usuarios.access);
                     if(isValid){
-                        const usuariosData = {
-                            id_usuario: usuarios.id_usuario,
-                            nombre_usuario: usuarios.nombre_usuario,
-                            email: usuarios.email,
-                            contraseña: usuarios.contraseña,
-                            mail: usuarios.mail,
-                            id_roles: usuarios.id_roles,
-                        };
+                        console.log("login")
+                        if(usuarios.nombre_usuario === nombre_usuario && usuarios.contraseña === access){
+                            const usuariosData = {
+                                id_usuario: usuarios.id_usuario,
+                                nombre_usuario: usuarios.nombre_usuario,
+                                email: usuarios.email,
+                                contraseña: usuarios.contraseña,
+                                mail: usuarios.mail,
+                                id_roles: usuarios.id_roles,
+                            };
+                        }   
                         return Response.success(usuariosData);
                     } else {
                         await Promise.reject(Response.error(Messages('LOGIN_NOT_EXIST'), 404));

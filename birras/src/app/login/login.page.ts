@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-//import { ObtenerdataService } from '../backend/services/obtenerdata.service';
-//'../../backend/services/obtenerdata.service'
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
@@ -19,7 +17,8 @@ export class LoginPage  implements OnInit{
   ngOnInit() {
     this.model = {
       email : null,
-      clave : null
+      clave : null,
+      rol:null
     };
   }
   async presentAlert() {

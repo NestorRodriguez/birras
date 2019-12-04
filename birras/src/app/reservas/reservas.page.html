@@ -8,16 +8,15 @@
       <ion-label routerLink="/bares">Bar</ion-label>     
     <ion-input  [(ngModel)]="model.personas" name="personas" placeholder="N° Personas" required type="text"></ion-input>
     <ion-item>
-        <ion-label>Motivo</ion-label>
-        <ion-select required interface="popover">
-          <ion-select-option value="nes">Despedida de soltera</ion-select-option>
-          <ion-select-option value="nes">Despedida de soltero</ion-select-option>
-          <ion-select-option value="n64">Dia del hombre</ion-select-option>
-          <ion-select-option value="nes">Dia de la mujer</ion-select-option>
-          <ion-select-option value="n64">Año nuevo</ion-select-option>
-          <ion-select-option value="n64">Cumpleaños</ion-select-option>
-          <ion-select-option value="n64">Amor y amistad</ion-select-option>
-          <ion-select-option value="n64">Halloween</ion-select-option>
+        <ion-select [(ngModel)]="model.motivo" name="motivo" interface="popover" required placeholder="motivo">
+          <ion-select-option value="soltera">Despedida de soltera</ion-select-option>
+          <ion-select-option value="soltero">Despedida de soltero</ion-select-option>
+          <ion-select-option value="hombre">Dia del hombre</ion-select-option>
+          <ion-select-option value="mujer">Dia de la mujer</ion-select-option>
+          <ion-select-option value="año">Año nuevo</ion-select-option>
+          <ion-select-option value="cumpleaños">Cumpleaños</ion-select-option>
+          <ion-select-option value="amistad">Amor y amistad</ion-select-option>
+          <ion-select-option value="halloween">Halloween</ion-select-option>
         </ion-select>
       </ion-item>
     <ion-input placeholder="Dedicatoria"></ion-input>

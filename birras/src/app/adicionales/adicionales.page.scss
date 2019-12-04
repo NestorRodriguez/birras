@@ -37,9 +37,11 @@ ion-header {
     }
     
     ion-select{
-    text-align: right;
-    --color:#ffffff;
-    }
+      text-align: center;
+      --color:#ffffff;
+      --padding-end:15px;
+      --padding-start:15px;
+      }
 
     ion-button{
         background: #ff912f;

@@ -1,17 +1,14 @@
 ion-header {
     --ion-background-color: #cb950f !important;
     text-align: center;
-    align-content: center;
     --color:#ffffff;
     }
     
     ion-title {
-    text-align: center;
-    --color:#ffffff;
-    }
-    
-    
-        
+  text-align: center;
+  --color:#ffffff;
+    }  
+            
     ion-content {
     --ion-background-color: #efb810 !important;
     text-align: center;
@@ -22,8 +19,6 @@ ion-header {
     ion-slide {
     align-content:center;
     text-align: center;
-    margin-left: 10px;
-    margin-left: 10px;
     margin-left: 10px;
     --color:#ffffff;
     }
@@ -62,10 +57,6 @@ ion-header {
   font-size: 14px;
 }
 
-    ion-img{
-      width: 12%;
-      height: 12%;
-  }
   
   ion-footer{
     --ion-background-color: #cb950f !important;
@@ -94,3 +85,10 @@ ion-header {
         --padding-end:15px;
     --padding-start:15px;
         }
+
+        .historial{
+          width: 12%;
+          height: 12%;   
+         padding-left: 6px;
+         padding-top: 6px;
+      }

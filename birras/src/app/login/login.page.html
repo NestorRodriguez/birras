@@ -8,9 +8,8 @@
   <br><br>
 <ion-item>
       <ion-label>Rol</ion-label>
-      <ion-select  interface="popover">
+      <ion-select  [(ngModel)]="model.rol" name="rol" interface="popover" required >
         <ion-select-option value="nes">Dueño Bar</ion-select-option>
-
         <ion-select-option value="n64">Usuario</ion-select-option>
       </ion-select>
     </ion-item>

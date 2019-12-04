@@ -18,7 +18,8 @@ model: any = {};
   ngOnInit() {
     this.model = {
       personas:null, 
-      nombre:null
+      nombre:null,
+      motivo:null
     };
   }
   async presentAlert() {

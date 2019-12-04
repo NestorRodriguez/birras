@@ -1,16 +1,15 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar>      
       <A HREF="reservas">
-          <ion-img align="left" src="assets/historial.PNG" BORDER="0"></ion-img>
+          <ion-img class="historial" align="left" src="assets/historial.PNG"></ion-img>
         </A>
-    <ion-title><b>BARES</b></ion-title>
+        <ion-title align="right">BARES</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content fullscreen padding scroll-y="false">
   <ion-slides>
 
     <ion-slide>
-        <ion-radio slot="start" color="success" value="Despedida de soltera"></ion-radio>
       <ion-label align="right"> OPERA</ion-label>
       <br><br>
       <ion-slides>
@@ -21,22 +20,7 @@
         <ion-slide>
           <img src="assets/PLANOS DE BAR OPERA.png" />
         </ion-slide>
-      </ion-slides><br>
-      <ion-item>
-          <ion-select required interface="popover" placeholder="mesas">
-            <ion-select-option value="Mesa 1">Mesa 1</ion-select-option>
-            <ion-select-option value="Mesa 2">Mesa 2</ion-select-option>
-            <ion-select-option value="Mesa 3">Mesa 3</ion-select-option>
-            <ion-select-option value="Mesa 4">Mesa 4</ion-select-option>
-            <ion-select-option value="Mesa 5">Mesa 5</ion-select-option>
-            <ion-select-option value="Mesa 6">Mesa 6</ion-select-option>
-            <ion-select-option value="Mesa 7">Mesa 7</ion-select-option>
-            <ion-select-option value="Mesa 8">Mesa 8</ion-select-option>
-            <ion-select-option value="Mesa 9">Mesa 9</ion-select-option>
-            <ion-select-option value="Mesa 10">Mesa 10</ion-select-option>
-            <ion-select-option value="Mesa 11">Mesa 11</ion-select-option>            
-          </ion-select>
-        </ion-item>
+      </ion-slides>
       <div class="texto">
       <ion-label>Cra. 14a # 83-23, Bogotá</ion-label><br>
       <ion-label> viernes y sábado:	19:00–3:00 </ion-label><br>
@@ -45,7 +29,6 @@
     </ion-slide>
 
     <ion-slide>
-        <ion-radio slot="start" color="success" value="Despedida de soltero"></ion-radio>
       <ion-label>GENOVEVA</ion-label>
       <br><br>
       <ion-slides>
@@ -55,22 +38,7 @@
         <ion-slide>
           <img src="assets/PLANO BAR GENOVEVA.png" />
         </ion-slide>
-      </ion-slides><br>
-      <ion-item>
-          <ion-select required interface="popover" placeholder="mesas">
-              <ion-select-option value="Mesa 1">Mesa 1</ion-select-option>
-              <ion-select-option value="Mesa 2">Mesa 2</ion-select-option>
-              <ion-select-option value="Mesa 3">Mesa 3</ion-select-option>
-              <ion-select-option value="Mesa 4">Mesa 4</ion-select-option>
-              <ion-select-option value="Mesa 5">Mesa 5</ion-select-option>
-              <ion-select-option value="Mesa 6">Mesa 6</ion-select-option>
-              <ion-select-option value="Mesa 7">Mesa 7</ion-select-option>
-              <ion-select-option value="Mesa 8">Mesa 8</ion-select-option>
-              <ion-select-option value="Mesa 9">Mesa 9</ion-select-option>
-              <ion-select-option value="Mesa 10">Mesa 10</ion-select-option>
-              <ion-select-option value="Mesa 11">Mesa 11</ion-select-option>            
-          </ion-select>
-        </ion-item>
+      </ion-slides>    
       <div class="texto">
       <ion-label>Cll 84 # 14 - 44</ion-label><br>
       <ion-label>jueves, viernes, sábado y domingo:	18:00–3:00</ion-label><br>
@@ -79,7 +47,6 @@
     </ion-slide>
 
     <ion-slide>
-        <ion-radio slot="start" color="success" value="Cumpleaños"></ion-radio>
       <ion-label>CENTRICO</ion-label>
       <br><br>
       <ion-slides>
@@ -89,29 +56,37 @@
         <ion-slide>
           <img src="assets/PLANOS DE BAR CENTRICO.png" />
         </ion-slide>
-      </ion-slides>
-      <ion-item>
-          
-          <ion-select required interface="popover" placeholder="mesas">
-              <ion-select-option value="Mesa 1">Mesa 1</ion-select-option>
-              <ion-select-option value="Mesa 2">Mesa 2</ion-select-option>
-              <ion-select-option value="Mesa 3">Mesa 3</ion-select-option>
-              <ion-select-option value="Mesa 4">Mesa 4</ion-select-option>
-              <ion-select-option value="Mesa 5">Mesa 5</ion-select-option>
-              <ion-select-option value="Mesa 6">Mesa 6</ion-select-option>
-              <ion-select-option value="Mesa 7">Mesa 7</ion-select-option>
-              <ion-select-option value="Mesa 8">Mesa 8</ion-select-option>
-              <ion-select-option value="Mesa 9">Mesa 9</ion-select-option>
-              <ion-select-option value="Mesa 10">Mesa 10</ion-select-option>
-              <ion-select-option value="Mesa 11">Mesa 11</ion-select-option>            
-          </ion-select>
-        </ion-item>
+      </ion-slides>      
       <div class="texto">
       <ion-label>CRA. 7 # 32 -16</ion-label><br>
       <ion-label>LUN A MIÉ: 12PM A 3PM Y 7PM A 12AM. JUE A SÁB: 12PM A 3PM Y 7PM. A 2:30AM.</ion-label><br>
       <ion-label>Tenga una experiencia unica con bogota a sus pies.</ion-label>
     </div>
     </ion-slide>
-  </ion-slides><br><br><br>
-  <ion-button routerLink="/reservas" color=#ff912f><b>Escoger</b></ion-button>
+  </ion-slides>
+  <form (ngSubmit)="enviarData(formulario)" #formulario="ngForm">
+  <ion-item>
+    <ion-select [(ngModel)]="model.mesas" name="mesas" interface="popover" required placeholder="mesas">
+      <ion-select-option value="Mesa 1">Mesa 1</ion-select-option>
+      <ion-select-option value="Mesa 2">Mesa 2</ion-select-option>
+      <ion-select-option value="Mesa 3">Mesa 3</ion-select-option>
+      <ion-select-option value="Mesa 4">Mesa 4</ion-select-option>
+      <ion-select-option value="Mesa 5">Mesa 5</ion-select-option>
+      <ion-select-option value="Mesa 6">Mesa 6</ion-select-option>
+      <ion-select-option value="Mesa 7">Mesa 7</ion-select-option>
+      <ion-select-option value="Mesa 8">Mesa 8</ion-select-option>
+      <ion-select-option value="Mesa 9">Mesa 9</ion-select-option>
+      <ion-select-option value="Mesa 10">Mesa 10</ion-select-option>
+      <ion-select-option value="Mesa 11">Mesa 11</ion-select-option>            
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-select [(ngModel)]="model.bar" name="bar" interface="popover" required placeholder="bares">
+      <ion-select-option value="opera">opera</ion-select-option>
+      <ion-select-option value="genoveva">genoveva</ion-select-option> 
+      <ion-select-option value="centrico">centrico</ion-select-option>               
+    </ion-select>
+  </ion-item>
+  <ion-button type="submit" color=#ff912f><b>Escoger</b></ion-button>
+  </form>
 </ion-content>

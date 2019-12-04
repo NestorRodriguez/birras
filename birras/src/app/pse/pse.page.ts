@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
 import { ObtenerdataService } from '../services/obtenerdata.service';
+import { PayPal, PayPalPayment, PayPalConfiguration } from '@ionic-native/paypal/ngx';
+
 
 @Component({
   selector: 'app-pse',
@@ -14,7 +16,7 @@ export class PsePage implements OnInit {
   registros: any[] = [];
   errorMessage = '';
 
-  constructor(private router: Router,public alertController: AlertController, private sendData: ObtenerdataService) { }  
+  constructor(private router: Router,public alertController: AlertController, private sendData: ObtenerdataService, private payPal: PayPal) { }  
   model: any = {};
   ngOnInit() {
     //this.total=70000+200000;
@@ -50,6 +52,7 @@ export class PsePage implements OnInit {
 
     await alert.present();
   }
+
   async presentAlert() {
     const alert = await this.alertController.create({
       header: 'ADVERTENCIA',
@@ -59,15 +62,58 @@ export class PsePage implements OnInit {
 
     await alert.present();
   }
+
   public enviarData( formulario: NgForm ) {
     if (formulario.valid) {
       this.sendData.obtenerData(this.model);
       this.reserva();
     } else {
       this.presentAlert();
-
     }
+
+    this.payPal.init({
+      PayPalEnvironmentProduction: 'YOUR_PRODUCTION_CLIENT_ID',
+      PayPalEnvironmentSandbox: 'YOUR_SANDBOX_CLIENT_ID'
+    }).then(() => {
+      // Environments: PayPalEnvironmentNoNetwork, PayPalEnvironmentSandbox, PayPalEnvironmentProduction
+      this.payPal.prepareToRender('PayPalEnvironmentSandbox', new PayPalConfiguration({
+        // Only needed if you get an "Internal Service Error" after PayPal login!
+        //payPalShippingAddressOption: 2 // PayPalShippingAddressOptionPayPal
+      })).then(() => {
+        let payment = new PayPalPayment('3.33', 'USD', 'Description', 'sale');
+        this.payPal.renderSinglePaymentUI(payment).then(() => {
+          // Successfully paid
+    
+          // Example sandbox response
+          //
+          // {
+          //   "client": {
+          //     "environment": "sandbox",
+          //     "product_name": "PayPal iOS SDK",
+          //     "paypal_sdk_version": "2.16.0",
+          //     "platform": "iOS"
+          //   },
+          //   "response_type": "payment",
+          //   "response": {
+          //     "id": "PAY-1AB23456CD789012EF34GHIJ",
+          //     "state": "approved",
+          //     "create_time": "2016-10-03T13:33:33Z",
+          //     "intent": "sale"
+          //   }
+          // }
+        }, () => {
+          // Error or render dialog closed without being successful
+        });
+      }, () => {
+        // Error in configuration
+      });
+    }, () => {
+      // Error in initialization, maybe PayPal isn't supported or something else
+    });
   }
+
+  
+
 }
 
 
