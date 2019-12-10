@@ -1,8 +1,5 @@
 <ion-header>
-  <ion-toolbar>
-      <A HREF="reservas">
-          <ion-img align="left" src="assets/historial.PNG" BORDER="0"></ion-img>
-        </A>      
+  <ion-toolbar>     
   <ion-title><b>DECORACION</b></ion-title>
   </ion-toolbar>
   </ion-header>
@@ -10,10 +7,15 @@
       <ion-slides>
 
         <ion-slide>          
-            <ion-label>Despedida de soltera(o)</ion-label><br><br>
+            <ion-label>Despedida de soltera</ion-label><br><br>
           <img src="assets/despedida de soltera.PNG"/>
         </ion-slide>
 
+        <ion-slide>          
+            <ion-label>Despedida de soltero</ion-label><br><br>
+          <img src="assets/despedida de soltero.PNG"/>
+        </ion-slide>
+ 
         <ion-slide>
             <ion-label>Cumpleaños</ion-label><br><br>
           <img src="assets/cumpleaños.PNG"/>
@@ -45,9 +47,13 @@
         </ion-slide>
         
       </ion-slides>
+      <br><br>
+      INCLUYE: gorros, vasos, platos, servilletas, carteles, bombas y guirnaldas. 
       <form (ngSubmit)="enviarData(formulario)" #formulario="ngForm">
         <ion-item>
-          <ion-select [(ngModel)]="model.motivo" name="motivo" interface="popover" required placeholder="motivo">
+            <ion-label>motivo</ion-label>
+          <ion-select [(ngModel)]="model.motivo" name="motivo" interface="popover" required>
+              <ion-select-option value="Ninguno">Ninguno</ion-select-option>
             <ion-select-option value="soltera">Despedida de soltera</ion-select-option>
             <ion-select-option value="soltero">Despedida de soltero</ion-select-option>
             <ion-select-option value="hombre">Dia del hombre</ion-select-option>
@@ -59,12 +65,14 @@
           </ion-select>
         </ion-item> 
         <ion-item>
-          <ion-select [(ngModel)]="model.precios" name="precios" interface="popover" required placeholder="precios">
+            <ion-label>precios</ion-label>
+          <ion-select [(ngModel)]="model.precios" name="precios" interface="popover" >
             <ion-select-option value="20.000">Personas: 10 $ 20.000</ion-select-option>
             <ion-select-option value="35.000">Personas: 15 $ 30.000</ion-select-option> 
             <ion-select-option value="40.000">Personas: 20 $ 40.000</ion-select-option>               
           </ion-select>
         </ion-item>
+        <br>
         <ion-button type="submit" color=#ff912f><b>Escoger</b></ion-button>
         </form>
     </ion-content>

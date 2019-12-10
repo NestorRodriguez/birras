@@ -16,13 +16,12 @@ export class TarjetaCreditoPage implements OnInit {
 
   constructor(private router: Router,public alertController: AlertController, private sendData: ObtenerdataService) { }  
   model: any = {};
-  isenabled=false; 
   ngOnInit() {
     //this.total=70000+200000;
     this.model = {
-      banco:null,   
       nombre:null,
-      cedula : null,
+      tarjeta:null,
+      codigo : null,
       cuotas:null
     };
   }

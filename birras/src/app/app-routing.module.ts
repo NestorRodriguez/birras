@@ -62,6 +62,10 @@ const routes: Routes = [
   {
     path: 'visualizar',
     loadChildren: () => import('./visualizar/visualizar.module').then( m => m.VisualizarPageModule)
+  },
+  {
+    path: 'tarjeta-debito',
+    loadChildren: () => import('./tarjeta-debito/tarjeta-debito.module').then( m => m.TarjetaDebitoPageModule)
   }
 ];
 

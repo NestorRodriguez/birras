@@ -4,26 +4,26 @@
   </ion-toolbar>    
     </ion-header>
 <ion-content>  
-  <form (ngSubmit)="enviarData(formulario)" #formulario="ngForm">
+  
   <br><br>
 <ion-item>
       <ion-label>Rol</ion-label>
-      <ion-select  [(ngModel)]="model.rol" name="rol" interface="popover" required >
+      <ion-select  [(ngModel)]="rol" name="rol" interface="popover" required >
         <ion-select-option value="nes">Dueño Bar</ion-select-option>
         <ion-select-option value="n64">Usuario</ion-select-option>
       </ion-select>
     </ion-item>
     <br>
-  <ion-input [(ngModel)]="model.usuario"  name="email" placeholder="Email ò Usuario" required type="text"></ion-input>
+  <ion-input [(ngModel)]="email"  name="email" placeholder="Email ò Usuario" required type="text"></ion-input>
   
   <br>
-    <ion-input [(ngModel)]="model.clave"  name="clave" placeholder="Contraseña" required type="password"></ion-input>
+    <ion-input [(ngModel)]="password"  name="password" placeholder="Contraseña" required type="password"></ion-input>
     
     <br><br>
-<ion-button  type="submit" color=#ff912f ><b>Ingresa</b></ion-button>
+<ion-button (click)="onLogin()" type="submit" color=#ff912f ><b>Ingresa</b></ion-button>
 
 
 <ion-button routerLink="/registro-usuarios" color=#ff912f ><b>Registro Usuario</b></ion-button>
 <ion-button routerLink="/registro-bares" type="submit" color=#ff912f expand=""><b>Registro Bar</b></ion-button>
-</form>
+
 </ion-content>

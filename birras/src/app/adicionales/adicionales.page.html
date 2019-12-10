@@ -1,8 +1,5 @@
 <ion-header>
   <ion-toolbar>
-      <A HREF="reservas">
-          <ion-img align="left" src="assets/historial.PNG" BORDER="0"></ion-img>
-        </A> 
   <ion-title><b>ADICIONALES</b></ion-title>
   </ion-toolbar>
   </ion-header>
@@ -53,7 +50,9 @@
 
       <form (ngSubmit)="enviarData(formulario)" #formulario="ngForm">
         <ion-item>
-          <ion-select [(ngModel)]="model.motivo" name="motivo" interface="popover" required placeholder="motivo">
+            <ion-label>motivo</ion-label>
+          <ion-select [(ngModel)]="model.motivo" name="motivo" interface="popover" required>
+              <ion-select-option value="ninguno">Ninguno</ion-select-option>
             <ion-select-option value="soltera">Despedida de soltera</ion-select-option>
             <ion-select-option value="soltero">Despedida de soltero</ion-select-option>
             <ion-select-option value="hombre">Dia del hombre</ion-select-option>
@@ -64,8 +63,38 @@
             <ion-select-option value="halloween">Halloween</ion-select-option>
           </ion-select>
         </ion-item> 
+        
         <ion-item>
-          <ion-select [(ngModel)]="model.porciones" name="porciones" interface="popover" required placeholder="porciones">
+            <ion-label>masas</ion-label>
+          <ion-select [(ngModel)]="model.masas" name="masas" interface="popover">
+              <ion-select-option value="30.000">Caramelo</ion-select-option>
+              <ion-select-option value="45.000">Chocolate</ion-select-option> 
+              <ion-select-option value="45.000">Vainilla</ion-select-option> 
+              <ion-select-option value="45.000">Manzana</ion-select-option> 
+              <ion-select-option value="60.000">Vino</ion-select-option>                  
+          </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>rellenos</ion-label>
+          <ion-select [(ngModel)]="model.rellenos" name="rellenos" interface="popover" >
+            <ion-select-option value="30.000">Arequipe</ion-select-option>
+            <ion-select-option value="45.000">Chocolate</ion-select-option> 
+            <ion-select-option value="45.000">Vainilla</ion-select-option> 
+            <ion-select-option value="45.000">Naranja</ion-select-option> 
+            <ion-select-option value="60.000">Frutos rojos</ion-select-option>               
+          </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>cobertura</ion-label>
+          <ion-select [(ngModel)]="model.cobertura" name="cobertura" interface="popover">
+            <ion-select-option value="30.000">Chocolate</ion-select-option>
+            <ion-select-option value="45.000">Crema</ion-select-option> 
+            <ion-select-option value="60.000">Fontdant</ion-select-option>               
+          </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>porciones</ion-label>
+          <ion-select [(ngModel)]="model.porciones" name="porciones" interface="popover">
             <ion-select-option value="30.000">Porciones: 10 $ 30.000</ion-select-option>
             <ion-select-option value="45.000">Porciones: 15 $ 45.000</ion-select-option> 
             <ion-select-option value="60.000">Porciones: 20 $ 60.000</ion-select-option>               

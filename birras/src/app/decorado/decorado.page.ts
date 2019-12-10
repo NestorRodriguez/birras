@@ -24,7 +24,7 @@ export class DecoradoPage implements OnInit {
   async presentAlert() {
     const alert = await this.alertController.create({
       header: 'ADVERTENCIA',
-      message: 'Por favor diligencia todos los campos para continuar',
+      message: 'Por favor escoge el motivo de la decoración para continuar.',
       buttons: ['OK']
     });
 

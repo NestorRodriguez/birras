@@ -4,19 +4,9 @@
   </ion-toolbar>
   </ion-header>
   <ion-content>
-      <form (ngSubmit)="enviarData(formulario)" #formulario="ngForm">
-    <ion-input required type="text" [(ngModel)]="model.nombre" name="nombre" placeholder="Nombres"></ion-input>
-    <ion-input required type="text" [(ngModel)]="model.apellido" name="apellido" placeholder="Apellidos"></ion-input>
-    <ion-input required type="text" [(ngModel)]="model.cedula" name="cedula" placeholder="Cedula"></ion-input>
-    <ion-item lines="none">
-            <ion-label size="4">Fecha nacimiento</ion-label>
-            <ion-datetime value="1990-02-19" placeholder="Fecha nacimiento"></ion-datetime>
-          </ion-item>
-      <ion-input required type="text" [(ngModel)]="model.direccion" name="direccion" placeholder="Direccion"></ion-input>				
-      <ion-input required type="email" [(ngModel)]="model.email" name="email" placeholder="Email"></ion-input>
-      <ion-input required type="text" [(ngModel)]="model.usuario" name="usuario" placeholder="Nombre usuario"></ion-input>
-      <ion-input required type="password" [(ngModel)]="model.clave" name="clave" placeholder="contraseña"></ion-input>
+  <ion-input required type="email" [(ngModel)]="user.email" name="email" placeholder="Email"></ion-input>
+      <ion-input required type="password" [(ngModel)]="user.password" name="password" placeholder="contraseña"></ion-input>
         
-      <ion-button type="submit" color=#ff912f><b>Registrate</b></ion-button>
-      </form>
+      <ion-button (click)="onRegister()" type="submit" color=#ff912f><b>Registrate</b></ion-button>
+      
   </ion-content>

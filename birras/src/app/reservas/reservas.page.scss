@@ -27,10 +27,8 @@ ion-header {
     text-align: center;
     align-content: center;
     --color:#ffffff;
-    }
-    
-  
-    
+    }   
+      
     ion-slide {
     align-content:center;
     text-align: center;
@@ -47,9 +45,11 @@ ion-header {
     
     ion-select{
     text-align: center;
+    align-content: center;
     --color:#ffffff;
     --padding-end:15px;
     --padding-start:15px;
+    max-width: 100% !important;    
     }
 
     ion-button{

@@ -18,13 +18,16 @@ export class AdicionalesPage implements OnInit {
   ngOnInit() {
     this.model = {
       motivo : null,
+      masas:null,
+      rellenos:null,
+      cobertura:null,
       porciones : null
     };
   }
   async presentAlert() {
     const alert = await this.alertController.create({
       header: 'ADVERTENCIA',
-      message: 'Por favor diligencia todos los campos para continuar',
+      message: 'Por favor escoge el motivo del adicional para continuar.',
       buttons: ['OK']
     });
 

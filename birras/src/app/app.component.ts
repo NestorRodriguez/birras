@@ -11,16 +11,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 })
 export class AppComponent {
   public appPages = [
-    {
-      title: 'Login',
-      url: '/login',
-      icon: 'contact'
-    },
-    {
-      title: 'Registro Bares',
-      url: '/registro-bares',
-      icon: 'paper'
-    },
+    
     {
       title: 'Reservas',
       url: '/reservas',
@@ -30,13 +21,10 @@ export class AppComponent {
       title: 'Novedades',
       url: '/novedades',
       icon: 'photos'
-    },
-    {
-      title: 'Registro Usuario',
-      url: '/registro-usuarios',
-      icon: 'paper'
     }
   ];
+
+  showSplash=true;
 
   constructor(
     private platform: Platform,
@@ -50,6 +38,7 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
     });
   }
 }

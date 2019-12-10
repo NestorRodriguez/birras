@@ -1,8 +1,9 @@
 ion-header {
-    --ion-background-color: #cb950f !important;
-    text-align: center;
-    --color:#ffffff;
-    }
+  --ion-background-color: #cb950f !important;
+  text-align: center;
+  align-content: center;
+  --color:#ffffff;
+  }
     
     ion-title {
   text-align: center;
@@ -28,12 +29,15 @@ ion-header {
       --color:#ffffff;
       }
     
-    ion-select{
-      text-align: center;
-      --color:#ffffff;
-      --padding-end:15px;
-      --padding-start:15px;
-      }
+      ion-select{
+        text-align: center;
+        align-content: center;
+        --color:#ffffff;
+        --padding-end:15px;
+        --padding-start:15px;
+        max-width: 100% !important;    
+        }
+
     ion-button{
         background: #ff912f;
         text-align: center;
