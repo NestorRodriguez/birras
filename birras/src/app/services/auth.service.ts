@@ -8,26 +8,28 @@ import{User}from '../shared/user.class';
 export class AuthService {
 public isLogged:any=false;
   constructor(public AfAuth:AngularFireAuth) {
-    AfAuth.authState.subscribe(user=>(this.isLogged=user));
+    AfAuth.authState.subscribe(user => (this.isLogged=user));
   }
 
-   async onlogin(user:User){
+   async onLogin(user:User){
 try{
   return await this.AfAuth.auth.signInWithEmailAndPassword(
     user.email,
     user.password
     );
 }catch(error){
-console.log('error de usuario o contraseña', error)
+console.log('error de usuario o contraseña', error);
 }   
 }
 
 async onRegister (user:User){
+  try{
 return await this.AfAuth.auth.createUserWithEmailAndPassword(
   user.email,
   user.password
     );
 }catch(error){
-  console.log('error de registro', error)
+  console.log('error de registro', error);
+}
 }
 }

@@ -13,7 +13,7 @@ import { User } from '../shared/user.class';
 export class RegistroUsuariosPage implements OnInit {
   user: User = new User();
 
-  constructor(private router: Router,public alertController: AlertController, private authSvc: AuthService) { }  
+  constructor(private router: Router, private authSvc: AuthService) { }  
   
   ngOnInit() {
     

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-
+import { AuthGuard } from './guards/auth.guard';
 const routes: Routes = [
   {
     path: '',
@@ -17,7 +17,8 @@ const routes: Routes = [
   },
   {
     path: 'novedades',
-    loadChildren: () => import('./novedades/novedades.module').then( m => m.NovedadesPageModule)
+    loadChildren: () => import('./novedades/novedades.module').then( m => m.NovedadesPageModule),
+      canActivate:[AuthGuard]
   },
   {
     path: 'registro-bares',

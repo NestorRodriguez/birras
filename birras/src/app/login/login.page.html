@@ -14,13 +14,13 @@
       </ion-select>
     </ion-item>
     <br>
-  <ion-input [(ngModel)]="email"  name="email" placeholder="Email ò Usuario" required type="text"></ion-input>
+  <ion-input [(ngModel)]="user.email"  name="email" placeholder="Email ò Usuario" required type="text"></ion-input>
   
   <br>
-    <ion-input [(ngModel)]="password"  name="password" placeholder="Contraseña" required type="password"></ion-input>
+    <ion-input [(ngModel)]="user.password"  name="password" placeholder="Contraseña" required type="password"></ion-input>
     
     <br><br>
-<ion-button (click)="onLogin()" type="submit" color=#ff912f ><b>Ingresa</b></ion-button>
+<ion-button (click)="onLogin()"  color=#ff912f ><b>Ingresa</b></ion-button>
 
 
 <ion-button routerLink="/registro-usuarios" color=#ff912f ><b>Registro Usuario</b></ion-button>

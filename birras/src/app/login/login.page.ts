@@ -15,11 +15,11 @@ export class LoginPage  implements OnInit{
     ngOnInit() {}
 
    async onLogin () {
-      const user = await this.authSvc.onlogin(this.user);
+      const user = await this.authSvc.onLogin(this.user);
 
       if(user){
         console.log('logeado');
-        this.router.navigateByUrl('/')
+        this.router.navigateByUrl('/novedades')
       }
     }
 
