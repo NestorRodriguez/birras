@@ -54,7 +54,7 @@ export class BaresPage implements OnInit {
 
   getConsulta() {
     this.obtenerdata.getBares().subscribe(response => {
-      this.getConsulta();
+      
       console.log(response);
     });
   }

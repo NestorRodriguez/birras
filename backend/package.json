@@ -1,16 +1,22 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "package description",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:server": "nodemon index.js"
+    "start:server": "nodemon index.js",
+    "start": "nodemon index.js"
   },
-  "author": "",
+  "author": "birras",
   "license": "ISC",
   "dependencies": {
+    "@angular/cli": "^8.3.20",
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "g": "^2.0.1",
+    "install": "^0.13.0",
+    "mysql": "^2.17.1",
+    "nodemon": "^2.0.2"
   }
 }

@@ -61,7 +61,7 @@ export class ReservasPage implements OnInit {
 
   getConsulta() {
     this.obtenerdata.getReserva().subscribe(response => {
-      this.getConsulta();
+     
       console.log(response);
     });
   }

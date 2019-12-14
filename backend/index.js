@@ -19,7 +19,7 @@ const db = mysql.createConnection({
     user: "root",
     password: "12345",
     database: "birras",
-    port: 3300,
+    port: 3306,
     multipleStatements: true,
 });
 
@@ -362,7 +362,7 @@ const query = db.query(sql, (error, result) => {
 
 });
 
-})
+});
 //      FIN  ADICIONALES
                         ///////
 

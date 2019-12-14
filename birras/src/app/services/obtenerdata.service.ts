@@ -30,7 +30,7 @@ urlBares = `${environment.url}/bares`;
 
   public obtenerData(formulario: any) {
     this.data = formulario;
-    console.log(this.data);
+    console.log('data');
   }
 
   public enviarData() {

@@ -60,8 +60,7 @@ export class AdicionalesPage implements OnInit {
 
   getConsulta() {
     this.obtenerdata.getAdicionales().subscribe(response => {
-      this.getConsulta();
-      console.log(response);
+          console.log(response);
     });
   }
 

@@ -55,7 +55,7 @@ export class DecoradoPage implements OnInit {
 
   getConsulta() {
     this.obtenerdata.getDecorado().subscribe(response => {
-      this.getConsulta();
+      
       console.log(response);
     });
   }
