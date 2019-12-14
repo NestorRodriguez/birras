@@ -48,10 +48,9 @@
         
       </ion-slides>
 
-      <form (ngSubmit)="enviarData(formulario)" #formulario="ngForm">
         <ion-item>
             <ion-label>motivo</ion-label>
-          <ion-select [(ngModel)]="model.motivo" name="motivo" interface="popover" required>
+          <ion-select [(ngModel)]="motivo" name="motivo" interface="popover" required>
               <ion-select-option value="ninguno">Ninguno</ion-select-option>
             <ion-select-option value="soltera">Despedida de soltera</ion-select-option>
             <ion-select-option value="soltero">Despedida de soltero</ion-select-option>
@@ -66,7 +65,7 @@
         
         <ion-item>
             <ion-label>masas</ion-label>
-          <ion-select [(ngModel)]="model.masas" name="masas" interface="popover">
+          <ion-select [(ngModel)]="masas" name="masas" interface="popover">
               <ion-select-option value="30.000">Caramelo</ion-select-option>
               <ion-select-option value="45.000">Chocolate</ion-select-option> 
               <ion-select-option value="45.000">Vainilla</ion-select-option> 
@@ -76,7 +75,7 @@
         </ion-item>
         <ion-item>
             <ion-label>rellenos</ion-label>
-          <ion-select [(ngModel)]="model.rellenos" name="rellenos" interface="popover" >
+          <ion-select [(ngModel)]="rellenos" name="rellenos" interface="popover" >
             <ion-select-option value="30.000">Arequipe</ion-select-option>
             <ion-select-option value="45.000">Chocolate</ion-select-option> 
             <ion-select-option value="45.000">Vainilla</ion-select-option> 
@@ -86,7 +85,7 @@
         </ion-item>
         <ion-item>
             <ion-label>cobertura</ion-label>
-          <ion-select [(ngModel)]="model.cobertura" name="cobertura" interface="popover">
+          <ion-select [(ngModel)]="cobertura" name="cobertura" interface="popover">
             <ion-select-option value="30.000">Chocolate</ion-select-option>
             <ion-select-option value="45.000">Crema</ion-select-option> 
             <ion-select-option value="60.000">Fontdant</ion-select-option>               
@@ -94,12 +93,12 @@
         </ion-item>
         <ion-item>
             <ion-label>porciones</ion-label>
-          <ion-select [(ngModel)]="model.porciones" name="porciones" interface="popover">
+          <ion-select [(ngModel)]="porciones" name="porciones" interface="popover">
             <ion-select-option value="30.000">Porciones: 10 $ 30.000</ion-select-option>
             <ion-select-option value="45.000">Porciones: 15 $ 45.000</ion-select-option> 
             <ion-select-option value="60.000">Porciones: 20 $ 60.000</ion-select-option>               
           </ion-select>
         </ion-item>
-        <ion-button type="submit" color=#ff912f><b>Escoger</b></ion-button>
-        </form>
+        <ion-button type="submit" color=#ff912f routerLink="/reservas"><b>Escoger</b></ion-button>
+        
     </ion-content>

@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  url:'http://localhost:3000/birras',
   firebaseConfig:{
     apiKey: "AIzaSyCKtqoNeMPFYYBx8SNKNI3J_yi5F0Y0Ao8",
   authDomain: "birras-816f7.firebaseapp.com",

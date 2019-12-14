@@ -61,10 +61,10 @@
     </div>
     </ion-slide>
   </ion-slides>
-  <form (ngSubmit)="enviarData(formulario)" #formulario="ngForm">
+  
   <ion-item>
       <ion-label>mesas</ion-label>
-    <ion-select [(ngModel)]="model.mesas" name="mesas" interface="popover" required>
+    <ion-select [(ngModel)]="mesas" name="mesas" interface="popover" required>
       <ion-select-option value="Mesa 1">Mesa 1</ion-select-option>
       <ion-select-option value="Mesa 2">Mesa 2</ion-select-option>
       <ion-select-option value="Mesa 3">Mesa 3</ion-select-option>
@@ -80,12 +80,12 @@
   </ion-item>
   <ion-item>
       <ion-label>bares</ion-label>
-    <ion-select [(ngModel)]="model.bar" name="bar" interface="popover" required>
+    <ion-select [(ngModel)]="bar" name="bar" interface="popover" required>
       <ion-select-option value="opera">opera</ion-select-option>
       <ion-select-option value="genoveva">genoveva</ion-select-option> 
       <ion-select-option value="centrico">centrico</ion-select-option>               
     </ion-select>
   </ion-item>
-  <ion-button type="submit" color=#ff912f><b>Escoger</b></ion-button>
-  </form>
+  <ion-button type="submit" color=#ff912f routerLink="/reservas"><b>Escoger</b></ion-button>
+  
 </ion-content>

@@ -49,10 +49,10 @@
       </ion-slides>
       <br><br>
       INCLUYE: gorros, vasos, platos, servilletas, carteles, bombas y guirnaldas. 
-      <form (ngSubmit)="enviarData(formulario)" #formulario="ngForm">
+      
         <ion-item>
             <ion-label>motivo</ion-label>
-          <ion-select [(ngModel)]="model.motivo" name="motivo" interface="popover" required>
+          <ion-select [(ngModel)]="motivo" name="motivo" interface="popover" required>
               <ion-select-option value="Ninguno">Ninguno</ion-select-option>
             <ion-select-option value="soltera">Despedida de soltera</ion-select-option>
             <ion-select-option value="soltero">Despedida de soltero</ion-select-option>
@@ -66,14 +66,14 @@
         </ion-item> 
         <ion-item>
             <ion-label>precios</ion-label>
-          <ion-select [(ngModel)]="model.precios" name="precios" interface="popover" >
+          <ion-select [(ngModel)]="precios" name="precios" interface="popover" >
             <ion-select-option value="20.000">Personas: 10 $ 20.000</ion-select-option>
             <ion-select-option value="35.000">Personas: 15 $ 30.000</ion-select-option> 
             <ion-select-option value="40.000">Personas: 20 $ 40.000</ion-select-option>               
           </ion-select>
         </ion-item>
         <br>
-        <ion-button type="submit" color=#ff912f><b>Escoger</b></ion-button>
+        <ion-button type="submit" color=#ff912f routerLink="/reservas"><b>Escoger</b></ion-button>
         </form>
     </ion-content>
   

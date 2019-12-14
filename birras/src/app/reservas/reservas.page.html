@@ -4,13 +4,13 @@
   </ion-toolbar>
   </ion-header>
   <ion-content>
-      <form (ngSubmit)="enviarData(formulario)" #formulario="ngForm">
+      
         <br><br>
       <ion-label routerLink="/bares">Bar</ion-label> <br><br>
-    <ion-input  [(ngModel)]="model.personas" name="personas" placeholder="N° Personas" required type="text"></ion-input>
+    <ion-input  [(ngModel)]="personas" name="personas" placeholder="N° Personas" required type="text"></ion-input>
     <ion-item>
         <ion-label>motivo</ion-label>
-        <ion-select [(ngModel)]="model.motivo" name="motivo" interface="popover" required>
+        <ion-select [(ngModel)]="motivo" name="motivo" interface="popover" required>
           <ion-select-option value="soltera">Despedida de soltera</ion-select-option>
           <ion-select-option value="soltero">Despedida de soltero</ion-select-option>
           <ion-select-option value="hombre">Dia del hombre</ion-select-option>
@@ -21,12 +21,20 @@
           <ion-select-option value="halloween">Halloween</ion-select-option>
         </ion-select>
       </ion-item>
-    <ion-input placeholder="Dedicatoria"></ion-input><br>
+      <ion-item>
+        <ion-label>Horario Ingreso</ion-label>
+        <ion-datetime [(ngModel)]="ingreso" name="ingreso" required  display-format="h:mm A" picker-format="h:mm A" value="1990-02-19T07:43Z"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>Horario Salida</ion-label>
+        <ion-datetime [(ngModel)]="salida" name="salida" required display-format="h:mm A" picker-format="h:mm A" value="1990-02-19T07:43Z"></ion-datetime>
+      </ion-item>
+    <ion-input  [(ngModel)]="dedicatoria" name="dedicatoria" type="text" placeholder="Dedicatoria"></ion-input><br>
     <ion-label routerLink="/adicionales">Adicionales</ion-label><br><br>
     <ion-label routerLink="/decorado">Decorado</ion-label>		<br><br>
-    <ion-input [(ngModel)]="model.nombre" name="nombre" placeholder="Nombre del festejado" required type="text" ></ion-input>
+    <ion-input [(ngModel)]="festejado" name="festejado" placeholder="Nombre del festejado" required type="text" ></ion-input>
     <br><br><br>
-      <ion-button type="submit"  color=#ff912f><b>Reservar</b></ion-button>
-    </form>
+      <ion-button (click)="saveForm()" type="submit"  routerlink="/pago" routersDirection="forward" color=#ff912f><b>Reservar</b></ion-button>
+  
   </ion-content>
   
