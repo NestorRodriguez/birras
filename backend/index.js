@@ -75,7 +75,6 @@ app.get('/birras/reserva/:id', (req, res) => {
 
 app.post('/birras/reserva', (req, res) => {
     const dato = {
-        id_bares:req.body.id_bares,
         personas:req.body.personas,
         motivo:req.body.motivo,
         ingreso:req.body.ingreso,
@@ -83,7 +82,7 @@ app.post('/birras/reserva', (req, res) => {
         dedicatoria:req.body.dedicatoria,
         festejado:req.body.festejado,
     };
-        const sql = `INSERT INTO reserva set id_bares='${dato.id_bares}',
+        const sql = `INSERT INTO reserva set 
         personas='${dato.personas}',
         motivo='${dato.motivo}',
         ingreso='${dato.ingreso}',
@@ -104,7 +103,6 @@ app.put('/birras/reserva:id', (req, res) => {
     const id = req.params.id;
 
     const dato = {
-        id_bares:req.body.id_bares,
         personas:req.body.personas,
         motivo:req.body.motivo,
         ingreso:req.body.ingreso,
@@ -349,6 +347,104 @@ app.put('/birras/adicionales:id', (req, res) => {
 app.delete('/birras/adicionales/:id', (req, res) => {
 const id = req.params.id;
 const sql = `DELETE FROM adicionales WHERE id_adicionales = '${id}';`;
+const query = db.query(sql, (error, result) => {
+    try {
+        if (error) {
+            throw error;
+        } else {
+            res.json(result)
+        }
+    } catch (error) {
+        res.json({ error: error.message })
+    }
+
+});
+
+});
+//      FIN  ADICIONALES
+                        ///////
+
+                        //      INICIO   BARES
+app.get('/birras/bares', (req, res) => {
+    console.log('Consultar datos de adicionales');
+    var query = db.query('select * from bares', (error, result) => {
+        try {
+            if (error) {
+                throw error;
+            } else {
+                console.log(result);
+                res.json(result)
+            }
+        } catch (error) {
+            res.json({ error: error.message })
+        }
+    });
+})
+
+app.get('/birras/bares/:id', (req, res) => {
+    const id = req.params.id;
+    const sql = `SELECT * FROM adicionales WHERE id_bares='${id}';`;
+    const query = db.query(sql, (error, result) => {
+        try {
+            if (error) {
+                throw error;
+            } else {
+                console.log(result);
+                const [data] = result;
+                res.json(data)
+            }
+        } catch (error) {
+            res.json({ error: error.message })
+        }
+    });
+})
+
+app.post('/birras/bares', (req, res) => {
+    const dato = {
+        mesas:req.body.mesas,
+        bares:req.body.bares,
+    };
+        const sql = `INSERT INTO adicionales set id_bares='${dato.id_bares}',
+       mesas='${dato.mesas}',
+       bar='${dato.bar}'`;
+
+    db.query(sql, (error, result) => {
+        if (error) {
+            res.json({ error: error })
+        } else {
+            res.json(result)
+        }
+    });
+})
+
+app.put('/birras/bares:id', (req, res) => {
+    const id = req.params.id;
+
+    const dato = {
+        
+    };
+    let sets = [];
+    for (i in dato) {
+        if (dato[i] || dato[i] == 0) {
+            sets.push(`${i}='${dato[i]}'`);
+        }
+    }
+
+    const sql = `UPDATE bares SET ${sets.join(', ')} WHERE id_bares='${id}';`;
+    console.log(sql);
+
+    db.query(sql, (error, result) => {
+        if (error) {
+            res.json({ error: error })
+        } else {
+            res.json(result)
+        }
+    });
+})
+
+app.delete('/birras/bares/:id', (req, res) => {
+const id = req.params.id;
+const sql = `DELETE FROM bares WHERE id_bares = '${id}';`;
 const query = db.query(sql, (error, result) => {
     try {
         if (error) {

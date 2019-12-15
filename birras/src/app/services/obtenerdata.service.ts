@@ -15,7 +15,7 @@ export class ObtenerdataService {
 // tslint:disable-next-line: member-ordering
   data: any;
   // tslint:disable-next-line: member-ordering
-  environment = { url : 'http://192.168.43.224:3000/birras'};
+  environment = { url : 'http://localhost:3000/birras'};
 // tslint:disable-next-line: member-ordering
   urlReserva = `${environment.url}/reserva`;
   // tslint:disable-next-line: member-ordering
